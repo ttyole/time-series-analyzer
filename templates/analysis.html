@@ -1,0 +1,10 @@
+<!doctype html>
+<body>
+<title>Analysis of {{ analysis[0][0] }}</title>
+<h1>Analysis of {{ analysis[0][0] }}</h1>
+{% for row in analysis if not row[1]%}
+  <ul>
+  <li>{{ row[0] }} : {{row[1]}}</li>
+  </ul>
+{% endfor %}
+</body>
