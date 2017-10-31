@@ -1,10 +1,12 @@
 <!doctype html>
 <body>
-<title>Analysis of {{ analysis[0][0] }}</title>
-<h1>Analysis of {{ analysis[0][0] }}</h1>
-{% for row in analysis if not row[1]%}
+<a href=http://localhost:5000>Go back</a>
+<title>Analysis of {{  analysis['filename'].to_string(index= False) }}</title>
+<h1>Analysis of {{ analysis['filename'].to_string(index= False) }}</h1>
+  <img src={{'/static/' + analysis['date'].to_string(index= False) + '.png'}} />
+{% for column in ['Mean', 'Variance', '1st quartile', '2nd quartile', '3rd quartile', 'Minimum', 'Minimum date', 'Maximum','Maximum date'] %}
   <ul>
-  <li>{{ row[0] }} : {{row[1]}}</li>
+  <li>{{ column }} : {{analysis[column].to_string(index= False)}}</li>
   </ul>
 {% endfor %}
 </body>

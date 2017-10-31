@@ -1,6 +1,6 @@
 <!doctype html>
-  <title>Upload new File</title>
-  <h1>Upload new File</h1>
+  <title>Upload new CSV</title>
+  <h1>Upload new CSV</h1>
   <form method=post enctype=multipart/form-data>
     <p><input type=file name=file>
        <input type=submit value=Upload>
@@ -14,3 +14,11 @@
   </ul>
 {% endif %}
 {% endwith %}
+<footer>
+<h2>Previous analysis</h2>
+{% for index, row in history.iterrows() %}
+<ul>
+<li>{{ row['date'] }} : <a href=http://localhost:5000/analysis?result_index={{index}}>{{row['filename'] }}</a> </li>
+</ul>
+{% endfor %}
+</footer>

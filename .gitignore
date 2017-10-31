@@ -1,4 +1,5 @@
 __pycache__
 .vscode/
-.history/*
-!somefolder/.gitkeep
+.static/*
+!static/.gitkeep
+history.csv
